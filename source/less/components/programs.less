@@ -1,34 +1,39 @@
+.programs__wrapper {
+  padding: 20px;
+}
 
 .programs__title {
   font-family: "Oswald", sans-serif;
-  color: #ffffff;
-  margin: 0 auto;
-  padding-top: 27px;
+  position: relative;
+  color: @dark;
+  z-index: 5;
+  margin-top: 27px;
   font-size: 36px;
   line-height: 36px;
   font-weight: 400;
+}
+
+.programs__title::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 302px;
+  /*background-image: url("../../img/index-background-desktop.png");*/
+  z-index: 1;
+  background-color: rgba(104, 183, 56, 0.85);
 }
 
 .programs__description {
   font-family: "Oswald", sans-serif;
   color: @dark;
   margin: 0 auto;
-  padding-top: 27px;
-  padding-bottom: 302px;
+  margin-top: 27px;
+  margin-bottom: 302px;
   font-size: 14px;
   line-height: 14px;
   font-weight: 400;
   text-transform: uppercase;
 }
-
-/*.programs__description::after {                           !!не допетрю пока с бэкграундом!!
-  content: "";
-  position: absolute;
-  width: 320px;
-  height: 302px;
-  background-image: url("../../img/index-background-desktop.png");
-  background-color: rgba(104, 183, 56, 0.85);
-}*/
 
 .programs__button {
   font-family: "Oswald", sans-serif;
