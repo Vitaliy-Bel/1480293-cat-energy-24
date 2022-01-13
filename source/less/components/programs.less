@@ -1,5 +1,19 @@
 .programs__wrapper {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: @tablet-width) {
+    width: 708px;
+    padding: 0 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1220px;
+    padding: 0 110px;
+  }
 }
 
 .programs__title {
@@ -8,20 +22,22 @@
   color: @dark;
   z-index: 5;
   margin-top: 27px;
+  margin-bottom: 25px;
   font-size: 36px;
   line-height: 36px;
   font-weight: 400;
+  text-align: center;
 }
 
-.programs__title::before {
+/*.programs__title::before {
   content: "";
   position: absolute;
   width: 320px;
   height: 302px;
-  /*background-image: url("../../img/index-background-desktop.png");*/
+  background-image: url("../../img/index-background-desktop.png");
   z-index: 1;
   background-color: rgba(104, 183, 56, 0.85);
-}
+}*/
 
 .programs__description {
   font-family: "Oswald", sans-serif;
@@ -33,13 +49,16 @@
   line-height: 14px;
   font-weight: 400;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .programs__button {
   font-family: "Oswald", sans-serif;
   color: @dark;
+  display: block;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
   text-transform: uppercase;
+  text-align: center;
 }

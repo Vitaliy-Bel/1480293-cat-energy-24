@@ -1,13 +1,29 @@
+
 .example__wrapper {
   background-color: @background-gray;
-  padding: 25px 20px 40px 20px;
-}
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
 
+  @media (min-width: @tablet-width) {
+    width: 708px;
+    padding: 0 30px;
+    background-color: @white;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1220px;
+    padding: 0 110px;
+  }
+}
 
 .example__title {
   font-family: "Oswald", sans-serif;
   color: @dark;
   margin: 0;
+  margin-bottom: 76px;
   font-size: 36px;
   line-height: 40px;
   font-weight: 400;
@@ -22,9 +38,33 @@
   font-weight: 400;
 }
 
-.example__list {
-  padding: 0;
+.example__parameters {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media (min-width: @desktop-width) {
+    flex-direction: column;
+  }
+}
+
+.example__list {   /*ПОЧЕМУ ВЫЛЕЗАЕТ!!!!*/
+  display: flex;
   margin: 0;
+  padding: 0;
+  justify-content: space-between;
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+  }
+
+  @media (min-width: @desktop-width) {
+    flex-direction: row;
+  }
 }
 
 .example__item {
@@ -52,6 +92,7 @@
 
 .example__price {
   font-family: "Oswald", sans-serif;
+  display: block;
   color: @dark;
   text-transform: uppercase;
   font-size: 14px;
