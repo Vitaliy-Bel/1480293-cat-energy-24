@@ -2,9 +2,96 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 440px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 478px;
+  }
 }
 
-.site-list__page {
+.nav--opened .site-list__page {
+  padding: 23px 20px;
+}
+
+.site-list__item {
+
+  background-color: @white;
+
+  &--current {
+    position: relative;
+
+    @media (max-width: @mobile-width-only) {
+      background-color: @special-grey;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    margin-right: 35px;
+
+    &--current::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background-color: @basic-green;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-right: 33px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--current::after {
+      background-color: @dark;
+    }
+  }
+}
+
+.site-list__item:first-child {
+  border-top: 1px solid @special-grey-white;
+
+  @media (min-width: @tablet-width) {
+    border: none;
+  }
+}
+
+.site-list__item .site-list__page:hover,
+.site-list__item .site-list__page:focus {
+  color: fade(@dark, 60%);
+}
+
+.site-list__item .site-list__page:active {
+  color: fade(@dark, 30%);
+}
+
+@media (max-width: @mobile-width-only) {
+  .nav--closed .site-list__item {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}
+
+.site-list__item .site-list__page {
+  position: relative;
+  display: block;
   font-family: "Oswald", sans-serif;
   text-decoration: none;
   color: @dark;
@@ -12,4 +99,23 @@
   line-height: 20px;
   font-weight: 500;
   text-transform: uppercase;
+  padding: 23px 0;
+  text-align: center;
+  border-bottom: 1px solid @special-grey-white;
+
+  @media (min-width: @tablet-width) {
+    border-bottom: none;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 41px 0 10px 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    z-index: 3;
+    color: @white;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 69px 0 8px 0;
+  }
 }

@@ -1,7 +1,8 @@
 .page-footer__wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 320px;
+  width: 280px;
   margin: 0 auto;
   padding: 0 20px;
 
@@ -16,20 +17,28 @@
   }
 }
 
-.page-footer__contacts {
-  display: flex;
-  justify-content: space-between;
-  padding: 26px 0;
+.page-footer__map {
+  content: "";
+  top: 112px;
+  left: 0;
+  position: absolute;
+  display: block;
+  border: none;
+  width: 320px;
+  height: 362px;
 
   @media (min-width: @tablet-width) {
-    padding: 56px 40px;
+    top: 199px;
+    width: 768px;
+    height: 400px;
   }
 
   @media (min-width: @desktop-width) {
-    padding: 56px 80px;
+    width: 1440px;
+    top: 0;
+    z-index: 1;
   }
 }
-
 
 .page-footer__wrapper--bottom {
   display: flex;

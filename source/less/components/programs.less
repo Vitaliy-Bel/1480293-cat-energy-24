@@ -1,7 +1,8 @@
 .programs__wrapper {
   display: flex;
+  position: relative;
   flex-direction: column;
-  min-width: 320px;
+  width: 280px;
   margin: 0 auto;
   padding: 0 20px;
 
@@ -16,10 +17,27 @@
   }
 }
 
+.programs__slogan {
+  z-index: 3;
+  padding: 0;
+  padding-bottom: 20px;
+  margin: 0;
+
+  @media (min-width: @tablet-width) {
+    padding-left: 87px;
+    padding-bottom: 526px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-left: 80px;
+    padding-bottom: 267px;
+  }
+}
+
 .programs__title {
+  display: block;
   font-family: "Oswald", sans-serif;
-  position: relative;
-  color: @dark;
+  color: @white;
   z-index: 5;
   margin-top: 27px;
   margin-bottom: 25px;
@@ -27,21 +45,47 @@
   line-height: 36px;
   font-weight: 400;
   text-align: center;
+
+  @media (min-width: @tablet-width) {
+    color: @dark;
+    text-align: left;
+    margin: 31px 207px 40px 0;
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 58px 726px 40px 0;
+  }
 }
 
-/*.programs__title::before {
-  content: "";
-  position: absolute;
-  width: 320px;
-  height: 302px;
-  background-image: url("../../img/index-background-desktop.png");
-  z-index: 1;
-  background-color: rgba(104, 183, 56, 0.85);
-}*/
+@media (max-width: @mobile-width-only) {
+  .programs__wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    height: 302px;
+    width: 320px;
+    background-repeat: no-repeat;
+    background-color: rgba(104, 183, 56, 0.85);
+  }
+
+  .programs__wrapper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    height: 302px;
+    width: 320px;
+    background-image: url("../../img/index-background-mobil.png");
+    background-repeat: no-repeat;
+  }
+}
 
 .programs__description {
   font-family: "Oswald", sans-serif;
-  color: @dark;
+  color: @white;
   margin: 0 auto;
   margin-top: 27px;
   margin-bottom: 302px;
@@ -50,15 +94,50 @@
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
+
+  @media (min-width: @tablet-width) {
+    color: @dark;
+    text-align: left;
+    margin: 0 336px 49px 0;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0 857px 52px 0;
+  }
 }
 
 .programs__button {
   font-family: "Oswald", sans-serif;
-  color: @dark;
   display: block;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
+  box-sizing: border-box;
+  color: @white;
+  background-color: @basic-green;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 7px 0;
+
+  &:hover,
+  &:focus {
+    background-color: @green;
+  }
+
+  &:active {
+    color: fade(@dark, 30%);
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 244px;
+    padding: 14px 0;
+    font-size: 20px;
+    line-height: 20px;
+  }
 }

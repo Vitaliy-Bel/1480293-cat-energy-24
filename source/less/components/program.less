@@ -1,5 +1,6 @@
 .program {
-  padding: 20px 0;
+  padding: 0;
+  padding-bottom: 20px;
   margin: 0;
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -7,14 +8,14 @@
 
   @media (min-width: @tablet-width) {
     gap: 30px;
-    padding: 0 0 45px 0;
+    padding-bottom: 45px;
   }
 
   @media (min-width: @desktop-width) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 80px;
-    padding: 82px 0 71px 0;
+    padding-bottom: 71px;
   }
 }
 
@@ -24,25 +25,68 @@
 }
 
 .program__title {
+  width: 137px;
+  margin: 30px 52px 29px 91px;
   font-family: "Oswald", sans-serif;
   color: @dark;
   font-size: 24px;
-  margin: 0;
+  padding: 0;
   line-height: 37px;
   text-transform: uppercase;
   font-weight: 400;
+
+  @media (min-width: @tablet-width) {
+    font-size: 36px;
+    line-height: 36px;
+    margin: 77px 449px 24px 53px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 77px 150px 73px 214px;
+  }
 }
 
 .program__description {
+  display: block;
+  position: relative;
   font-family: "Arial", sans-serif;
+  width: 227px;
+  margin: 0 33px 38px 20px;
   color: @dark-grey;
-  margin: 0;
+  padding: 0;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
+
+  @media (min-width: @tablet-width) {
+    color: @dark;
+    width: 340px;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 316px 48px 52px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 467px;
+    margin: 0 51px 23px 52px;
+  }
+}
+
+@media (max-width: @mobile-width-only) {
+  .program__description::after {
+    content: "";
+    position: absolute;
+    bottom: -23px;
+    left: 0;
+    width: 240px;
+    border: 1px solid @grey-line;
+  }
 }
 
 .program__link {
+  display: block;
+  width: 83px;
+  margin: 0 178px 22px 19px;
   font-family: "Oswald", sans-serif;
   color: @dark;
   font-size: 16px;
@@ -50,4 +94,15 @@
   font-weight: 400;
   text-decoration: none;
   text-transform: uppercase;
+
+  @media (min-width: @tablet-width) {
+    width: 108px;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0 548px 57px 52px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0 410px 59px 52px;
+  }
 }

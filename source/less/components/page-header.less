@@ -1,12 +1,17 @@
-.page-header {
+.page-header__wrapper {
   display: flex;
+  position: relative;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
-  min-width: 280px;
+  width: 280px;
   padding: 0 20px;
+  min-height: 65px;
+  background-color: @white;
 
   @media (min-width: @tablet-width) {
     width: 708px;
+    flex-direction: row;
     padding: 0 30px;
   }
 
@@ -16,25 +21,77 @@
   }
 }
 
+@media (min-width: @desktop-width) {
+  .page-header__wrapper::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    height: 694px;
+    width: 720px;
+    background-repeat: no-repeat;
+    background-color: rgba(104, 183, 56, 0.85);
+  }
+
+  .page-header__wrapper::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    height: 694px;
+    width: 720px;
+    background-size: cover;
+    background-image: url("../../img/index-background-desktop.png");
+    background-repeat: no-repeat;
+  }
+}
+
+.page-header__logo {
+  width: 60%;             /*Нужно??*/
+  padding: 12px 0 17px 0;
+
+  @media (min-width: @tablet-width) {
+    width: auto;                      /*Нужно??*/
+    max-width: 174px;
+    padding: 26px 0 31px 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 202px;
+    padding: 53px 0;
+  }
+}
+
+.page-header__logo-mobil {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (max-width: @mobile-width-only) {
-  .page-header__img-logo--tablet,
-  .page-header__img-logo--desktop {
+  .page-header__logo-tablet,
+  .page-header__logo-desktop {
     display: none;
   }
 }
 
-@media (min-width: @tablet-width) and (max-width: @desktop-width - 1px) {  /*ПОЧЕМУ РУГАЕТСЯ?*/
-  .page-header__img-logo--desktop,
-  .page-header__img-logo,
-  .page-header__img-icon {
+@media (min-width: @tablet-width) {
+  .page-header__logo-mobil,
+  .page-header__logo-desktop {
     display: none;
   }
 }
 
 @media (min-width: @desktop-width) {
-  .page-header__img-logo--tablet,
-  .page-header__img-logo,
-  .page-header__img-icon {
+  .page-header__logo-mobil,
+  .page-header__logo-tablet {
     display: none;
+  }
+
+  .page-header__logo-desktop {
+    display: block;
   }
 }

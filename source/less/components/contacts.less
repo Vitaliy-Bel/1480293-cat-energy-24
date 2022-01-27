@@ -1,16 +1,38 @@
 .contacts {
   padding: 26px 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 362px;
+
+  @media (min-width: @tablet-width) {
+    padding: 56px 40px;
+    margin-bottom: 400px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 565px;
+    padding: 56px 80px;
+    margin-top: 95px;
+    margin-bottom: 107px;
+    background-color: @white;
+    z-index: 2;
+  }
 }
 
 .contacts__title {
   font-family: "Oswald", sans-serif;
   color: @light-dark;
   margin: 0;
-
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
   font-weight: 400;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 26px;
+    width: 165px;
+  }
 }
 
 .contacts__text {
@@ -20,4 +42,10 @@
   line-height: 20px;
   font-weight: 400;
   font-style: normal;
+
+  @media (min-width: @tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+    width: 155px;
+  }
 }
