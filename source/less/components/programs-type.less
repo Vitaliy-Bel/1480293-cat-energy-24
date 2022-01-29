@@ -1,5 +1,72 @@
+.programs-type {
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: @tablet-width) {
+    border: 1px solid @special-grey-white;
+    box-sizing: border-box;
+    padding: 25px 0;
+    margin-bottom: 71px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 568px;
+    margin-bottom: 69px;
+  }
+}
+
 .programs-type__item {
   list-style-type: none;
+  margin-bottom: 19px;
+
+  @media (min-width: @tablet-width) {
+
+    margin-bottom: 13px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.programs-type__label {
+  position: relative;
+}
+
+.programs-type__square {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: @white;
+  border-radius: 50%;
+  border: 1px solid @special-grey;
+  cursor: pointer;
+
+  @media (min-width: @tablet-width) {
+    left: 39px;
+  }
+}
+
+.programs-type__input[type="radio"]:checked + .programs-type__square::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 13.5px;
+  height: 13.5px;
+  border-radius: 50%;
+  background-color: @basic-green;
+}
+
+.programs-type__input[type="radio"]:hover + .programs-type__square,
+.programs-type__input[type="radio"]:focus + .programs-type__square {
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.19));   /*переводить цвет в дарк или еще что-то?*/
+}
+
+.programs-type__input[type="radio"]:active + .programs-type__square {
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.2));   /* pressed?*/
 }
 
 .programs-type__name {
@@ -9,4 +76,11 @@
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
+  margin-left: 45px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+    margin-left: 88px;
+  }
 }

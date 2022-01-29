@@ -1,8 +1,61 @@
+.parameter {
+  width: 140px;
+
+  @media (min-width: @tablet-width) {
+    width: 250px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 169px;
+  }
+}
+
+.parameter__item {
+  display: flex;
+  position: relative;
+  width: 140px;
+  border: none;
+  justify-content: space-between;
+  margin-bottom: 13px;
+
+  @media (min-width: @tablet-width) {
+    width: 250px;
+
+    &:last-of-type {
+      margin-bottom: 33px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      left: 0;
+      width: 250px;
+      border: 1px solid @special-grey;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 169px;
+
+    &::after {
+
+      width: 169px;
+    }
+  }
+}
+
 .parameter__description,
 .parameter__number {
   font-family: "Arial", sans-serif;
   color: @dark-grey;
   font-size: 12px;
+  padding: 0;
+  margin: 0;
   line-height: 16px;
   font-weight: 400;
+
+  @media (min-width: @tablet-width) {
+    font-size: 16px;
+  }
 }

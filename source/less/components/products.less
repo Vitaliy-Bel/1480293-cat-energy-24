@@ -1,10 +1,49 @@
-.products {
+.products__caption {
+  font-family: "Oswald", sans-serif;
+  position: relative;
+  color: @dark;
+  margin: 27px 0 49px 0;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 400;
+
+  @media (min-width: @tablet-width) {
+    margin: 64px 0 82px 0;
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 74px 0 84px 0;
+  }
+}
+
+@media (max-width: @mobile-width-only) {
+  .products__caption::before,
+  .products__caption::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    width: 320px;
+    border: 1px solid @special-grey-light;
+  }
+
+  .products__caption::before {
+    top: -15px;
+  }
+
+  .products__caption::after {
+    bottom: -30px;
+  }
+}
+
+.products__list {
   display: flex;
   flex-direction: column;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 
   @media (min-width: @tablet-width) {
     display: grid;
@@ -21,32 +60,173 @@
   }
 }
 
+
 .products__item {
+  width: 280px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 33px;
+
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   @media (min-width: @tablet-width) {
+    flex-direction: column;
     width: 324px;
+    height: 511px;
+    margin: 0;
+    background: linear-gradient(to bottom, @white 73px, @basic-grey 73px);
   }
 
   @media (min-width: @desktop-width) {
     width: 245px;
+    background: linear-gradient(to bottom, @white 80px, @basic-grey 80px);
+  }
+}
+
+.products__img {
+  display: block;
+  background-color: @white;
+  margin-bottom: 13px;
+}
+
+.products__wrapper {
+  width: 140px;
+
+  @media (min-width: @tablet-width) {
+    width: 250px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 169px;
+  }
+}
+
+@media (max-width: @mobile-width-only) {
+  .products__item:nth-of-type(2n+1) .products__img {
+    padding: 14px 34px 12px;
+  }
+
+  .products__item:nth-of-type(2n+2) .products__img {
+    padding: 11px 28px 0;
+  }
+
+  .products__item::after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: -20px;
+    width: 320px;
+    border: 1px solid @special-grey-light;
   }
 }
 
 .products__title {
+  display: block;
   font-family: "Oswald", sans-serif;
   color: @dark-dark-grey;
   text-transform: uppercase;
+  width: 76px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+  margin: 0;
+  margin-bottom: 18px;
+
+  @media (min-width: @tablet-width) {
+    text-align: center;
+    width: 155px;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 auto;
+    margin-top: 34px;
+    margin-bottom: 21px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 145px;
+    line-height: 21px;
+    margin-top: 34px;
+    margin-bottom: 21px;
+  }
 }
 
 .products__button {
   font-family: "Oswald", sans-serif;
-  color: @dark;
   text-transform: uppercase;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  color: @white;
+  background-color: @basic-green;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+
+  @media (min-width: @tablet-width) {
+
+
+    width: 248px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 168px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: @green;
+  }
+
+  &:active {
+    color: fade(@dark, 30%);
+  }
+}
+
+.products__item--additionally {
+  @media (min-width: @tablet-width) {
+    position: relative;
+    background: none;              /* Как-то иначе можно отменить транспарент?*/
+    background-color: @white;
+    border: 2px solid @basic-grey;
+    box-sizing: border-box;
+  }
+}
+
+.products__plus {
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 120px;
+    width: 30px;
+    height: 2px;
+    background-color: @plus;
+
+    @media (min-width: @tablet-width) {
+      width: 60px;
+      top: 82px;
+      left: 132px;
+    }
+  }
+
+  &::before {
+    transform: rotate(90deg);
+    box-shadow: none;
+  }
 }
 
 .products__showmore {
@@ -56,6 +236,18 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 8px;
+
+  @media (min-width: @tablet-width) {
+    text-align: center;
+    width: 134px;
+    font-size: 20px;
+    line-height: 22px;
+    margin-top: 184px;
+    margin-bottom: 23px;
+  }
 }
 
 .products__moreflavors {
@@ -64,13 +256,29 @@
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
+  margin: 0 auto;
+  margin-bottom: 8px;
+
+  @media (min-width: @tablet-width) {
+    text-align: center;
+    width: 170px;
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 87px;
+  }
 }
 
-.products__link {
-  font-family: "Oswald", sans-serif;
-  color: @dark-grey;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  text-decoration: none;
+.products__button--additionally {
+  color: @dark;
+  background-color: @basic-grey;
+
+  &:hover,
+  &:focus {
+    background-color: @special-grey-light;
+  }
+
+  &:active {
+    background-color: @special-grey-light;
+    color: fade(@dark, 30%);
+  }
 }

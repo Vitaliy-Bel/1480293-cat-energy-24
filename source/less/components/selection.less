@@ -1,13 +1,13 @@
 .selection__wrapper {
   display: flex;
   flex-direction: column;
-  min-width: 320px;
+  width: 280px;
   margin: 0 auto;
   padding: 0 20px;
 
   @media (min-width: @tablet-width) {
-    width: 708px;
-    padding: 0 66px 0 71px;
+    width: 630px;
+    padding: 0 71px 0 67px;
   }
 
   @media (min-width: @desktop-width) {
@@ -22,15 +22,48 @@
   font-size: 36px;
   line-height: 36px;
   font-weight: 400;
+  position: relative;
+  margin: 27px 0 37px 0;
+
+  @media (min-width: @tablet-width) {
+    margin: 64px 0 54px 0;
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 74px 0 56px 0;
+  }
+}
+
+@media (max-width: @mobile-width-only) {
+  .selection__title::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -20px;
+    width: 320px;
+    border: 1px solid @special-grey-light;
+  }
 }
 
 .selection__description {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   color: @dark;
+  width: 226px;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
+  margin-bottom: 39px;
+
+  @media (min-width: @tablet-width) {
+    width: 323px;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0;
+    margin-bottom: 66px;
+  }
 }
 
 .selection__form {
@@ -46,13 +79,48 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: @basic-green;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+
+  @media (min-width: @tablet-width) {
+    width: 282px;
+    margin-bottom: 72px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 568px;
+    margin-bottom: 82px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: @green;
+  }
+
+  &:active {
+    color: fade(@dark, 30%);
+  }
 }
 
 .selection__required {
+  display: block;
   font-family: "Arial", sans-serif;
   color: @dark;
+  text-align: center;
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
+
+  @media (min-width: @tablet-width) {
+    width: 180px;
+    font-size: 16px;
+  }
 }
 

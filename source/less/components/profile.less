@@ -1,3 +1,42 @@
+.profile {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-bottom: 50px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 72px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 569px;
+    margin-bottom: 69px;
+  }
+}
+
+@media (max-width: @mobile-width-only) {
+  .profile::after {
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: -20px;
+    width: 320px;
+    border: 1px solid @special-grey;
+  }
+}
+
+
+.profile__item {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin-bottom: 13px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 .profile__label {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
@@ -5,44 +44,53 @@
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
+  margin-right: 9px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 
-.profile__item {
-  list-style-type: none;
+.profile__input {
+  display: flex;
+  text-align: start;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  color: @dark-grey;
+  font-size: 16px;
+  line-height: 46px;
+  font-weight: 400;
+  margin: 0;
+  flex-grow: 1;
+  padding-left: 16px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 52px;
+  }
 }
 
 .profile__input::-webkit-input-placeholder {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   color: @dark-grey;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
 }
 
 .profile__input::-moz-placeholder {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   color: @dark-grey;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
 }
 
 .profile__input:-ms-input-placeholder {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   color: @dark-grey;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
 }
 
 .profile__input:-moz-placeholder {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   color: @dark-grey;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
 }

@@ -1,15 +1,19 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .form__questionnaire {
   display: flex;
   flex-direction: column;
 
   @media (min-width: @desktop-width) {
     flex-direction: row;
+    column-gap: 80px;
     justify-content: space-between;
   }
 }
 
-.form__profile,
-.form__programs-type,
 .form__contacts,
 .form__additionally {
   margin: 0;

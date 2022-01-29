@@ -1,13 +1,125 @@
+.additional-products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .additional-products__title {
   font-family: "Oswald", sans-serif;
   color: @dark;
+  text-align: left;
+  position: relative;
+  margin: 0;
+  padding: 0;
   font-size: 24px;
   line-height: 24px;
   font-weight: 400;
+  margin-bottom: 49px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 36px;
+    line-height: 36px;
+    margin-left: 37px;
+    margin-bottom: 106px;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: flex;
+    margin: 0;
+    margin-bottom: 96px;
+  }
+}
+
+.additional-products__title::after {
+  content: "";
+  position: absolute;
+  bottom: -36px;
+  left: 0;
+  width: 280px;
+  border: 1px solid @special-grey;
+
+  @media (min-width: @tablet-width) {
+    left: -37px;
+    bottom: -81px;
+    width: 708px;
+  }
+
+  @media (min-width: @desktop-width) {
+    left: 0;
+    bottom: -80px;
+    width: 895px;
+  }
+}
+
+.additional-products__list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 54px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 69px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 896px;
+    margin-bottom: 86px;
+  }
 }
 
 .additional-products__item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
   list-style-type: none;
+  width: 280px;
+  border: none;
+  margin-bottom: 31px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: 0;
+    width: 280px;
+    border: 1px solid @special-grey;
+  }
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 54px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 632px;
+    margin-left: 38px;
+    margin-right: 38px;
+
+    &:last-of-type {
+      margin-bottom: 97px;
+    }
+
+    &::after {
+      width: 708px;
+      bottom: -28px;
+      left: -37px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 896px;
+    margin: 0;
+    margin-bottom: 54px;
+
+    &:last-of-type {
+      margin-bottom: 86px;
+    }
+
+    &::after {
+      width: 896px;
+      bottom: -7px;
+      left: 0;
+    }
+  }
 }
 
 .additional-products__text {
@@ -17,6 +129,43 @@
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
+  margin-bottom: 10px;
+
+  @media (min-width: @tablet-width) {
+    width: 316px;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 26px;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    margin: 0;
+  }
+}
+
+.additional-products__wrapper {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+
+  @media (min-width: @tablet-width) {
+    margin: 0;
+    width: 316px;
+    justify-content: flex-end;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 288px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    margin-right: 38px;
+  }
 }
 
 .additional-products__description,
@@ -25,22 +174,78 @@
   color: @dark-grey;
   font-size: 14px;
   line-height: 14px;
+  margin: 0;
   font-weight: 400;
+
+  @media (min-width: @tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 26px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
 }
+
+@media (min-width: @tablet-width) {
+  .additional-products__number {
+    padding-left: 50px;
+  }
+}
+
 
 .additional-products__button {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
-  color: @dark;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  color: @white;
+  background-color: @basic-green;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+
+  @media (min-width: @tablet-width) {
+
+
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 168px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: @green;
+  }
+
+  &:active {
+    color: fade(@dark, 30%);
+  }
 }
 
+
 .additional-products__prize {
+
   font-family: "Arial", sans-serif;
   color: @dark;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+
+  @media (min-width: @desktop-width) {
+    width: 245px;
+  }
 }

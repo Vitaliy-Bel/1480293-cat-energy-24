@@ -1,23 +1,51 @@
 .form-contacts__title {
+  display: block;
+  width: 190px;
   font-family: "Oswald", sans-serif;
   color: @dark;
   font-size: 24px;
   line-height: 26px;
   font-weight: 400;
+  margin-bottom: 35px;
+
+  @media (min-width: @tablet-width) {
+    width: 512px;
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 76px;
+  }
 }
 
 .form-contacts__wrapper {
   display: flex;
   flex-direction: column;
+  margin-bottom: 23px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 65px;
+  }
 
   @media (min-width: @desktop-width) {
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 69px;
   }
 }
 
 .form-contacts__item {
+  display: flex;
+  align-items: center;
   list-style-type: none;
+  margin-bottom: 13px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    width: 572px;
+  }
 }
 
 .form-contacts__label {
@@ -27,40 +55,50 @@
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
+  margin-right: 9px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 
-.form-contacts__input::-webkit-input-placeholder {
+.form-contacts__input {
+  display: flex;
+  text-align: start;
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   color: @dark-grey;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 46px;
   font-weight: 400;
+  margin: 0;
+  flex-grow: 1;
+  padding-left: 16px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 52px;
+  }
+}
+
+
+.form-contacts__input::-webkit-input-placeholder {
+  font-family: "Oswald", sans-serif;
+  color: @dark-grey;
 }
 
 .form-contacts__input::-moz-placeholder {
   font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
   color: @dark-grey;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
 }
 
 .form-contacts__input:-ms-input-placeholder {
   font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
   color: @dark-grey;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
 }
 
 .form-contacts__input:-moz-placeholder {
   font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
   color: @dark-grey;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
 }

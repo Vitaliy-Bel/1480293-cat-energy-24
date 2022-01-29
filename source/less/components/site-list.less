@@ -57,8 +57,18 @@
     }
 
     &--current::after {
+      background-color: @green;
+    }
+
+    .site-list--index &--current::after {
       background-color: @dark;
     }
+  }
+}
+
+@media (min-width: @desktop-width) {                          /*не переопределить!!!*/
+  .site-list--index .site-list__item--current::after {
+    background-color: @dark;
   }
 }
 
@@ -113,9 +123,15 @@
 
   @media (min-width: @desktop-width) {
     z-index: 3;
-    color: @white;
+    color: @dark;
     font-size: 20px;
     line-height: 30px;
     padding: 69px 0 8px 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .site-list--index .site-list__page {
+    color: @white;
   }
 }
