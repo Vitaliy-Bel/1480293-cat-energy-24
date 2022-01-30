@@ -61,6 +61,9 @@
   font-size: 16px;
   line-height: 46px;
   font-weight: 400;
+  border: none;
+  outline: 1px solid @border-grey-light;
+  box-sizing: border-box;
   margin: 0;
   flex-grow: 1;
   padding-left: 16px;
@@ -70,6 +73,19 @@
     line-height: 52px;
   }
 }
+
+.profile__input:hover {
+  outline: 1px solid @special-grey;
+}
+
+.profile__input:focus {
+  outline: 2px solid @dark-grey;
+}
+
+.profile__input:disabled {
+  outline: 2px solid @error;
+}
+
 
 .profile__input::-webkit-input-placeholder {
   font-family: "Oswald", sans-serif;
