@@ -19,7 +19,7 @@
 
 .page-footer__map {
   content: "";
-  top: 112px;
+  top: 113px;
   left: 0;
   position: absolute;
   display: block;
@@ -40,6 +40,19 @@
   }
 }
 
+
+.page-footer__map::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;                      /*Не работает!!!!*/
+  background-color: @white;
+  background-image: url("../../img/map-pin-mobil.png");
+  height: 53px;
+  width: 57px;
+}
+
 .page-footer__wrapper--bottom {
   display: flex;
   flex-direction: column;
@@ -50,4 +63,17 @@
     flex-direction: row;
     justify-content: space-between;
   }
+}
+
+.page-footer__logo {
+  display: block;
+  cursor: pointer;
+  margin-top: 39px;
+  margin-bottom: 32px;
+}
+
+.page-footer__img {
+  width: 128px;
+  height: 24px;
+  margin: 0 auto;
 }

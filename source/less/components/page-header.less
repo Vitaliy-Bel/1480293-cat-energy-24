@@ -45,15 +45,21 @@
     background-size: cover;
     background-image: url("../../img/index-background-desktop.png");
     background-repeat: no-repeat;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/index-background-desktop@2x.png");
+      background-size: cover;
+    }
   }
 }
 
+/*
 .page-header__logo {
-  width: 60%;             /*Нужно??*/
+  width: 60%;
   padding: 12px 0 17px 0;
 
   @media (min-width: @tablet-width) {
-    width: auto;                      /*Нужно??*/
+    width: auto;
     max-width: 174px;
     padding: 26px 0 31px 0;
   }
@@ -62,8 +68,46 @@
     max-width: 202px;
     padding: 53px 0;
   }
+}*/
+
+.page-header__logo {
+  position: relative;
+  display: block;
+
+  @media (max-width: @mobile-width-only) {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 90px;
+      top: 25px;
+      background-color: @white;
+      background-image: url("../../img/logo-header-mobil.svg");
+      height: 18px;
+      width: 101px;
+    }
+  }
 }
 
+.page-header__logo img {
+  width: 33px;
+  height: 37px;
+  padding: 11px 0 12px 0;
+
+  @media (min-width: @tablet-width) {
+    display: block;
+    width: 174px;
+    height: auto;
+    padding: 24px 0 31px 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 55px 0;
+    width: 202px;
+  }
+}
+
+/*
 .page-header__logo-mobil {
   display: flex;
   flex-direction: row;
@@ -94,4 +138,4 @@
   .page-header__logo-desktop {
     display: block;
   }
-}
+}*/

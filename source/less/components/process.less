@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 280px;
   margin: 0 auto;
-  padding: 0 20px 49px 20px;
+  padding: 0 20px 51px 20px;
 
   @media (min-width: @tablet-width) {
     width: 708px;
@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 26px;
 
   @media (min-width: @tablet-width) {
     display: grid;
@@ -40,6 +40,12 @@
       width: 768px;
       border: 1px solid @grey-line;
     }
+
+    @media (min-width: @desktop-width) {
+      &::after {
+        border: none;
+      }
+    }
   }
 
   @media (min-width: @desktop-width) {
@@ -53,7 +59,10 @@
 
 .process__item {
   display: flex;
+  position: relative;
   list-style-type: none;
+  margin-left: 80px;
+  z-index: 1;
 
   &:last-of-type {    /*как это отменить на таблете?*/
     margin-bottom: 0;
@@ -61,8 +70,44 @@
 
   @media (min-width: @tablet-width) {
     width: 245px;
+    margin: 0;
     margin-top: 151px;
     margin-bottom: 51px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -183px;
+      left: 141px;
+      font-weight: 400;
+      font-size: 280px;
+      line-height: 280px;
+      font-family: "Oswald", sans-serif;
+      color: @basic-grey;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 42px;
+      text-align: center;
+      z-index: 0;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .process__item--one::before {
+    content: "1";
+  }
+
+  .process__item--two::before {
+    content: "2";
+  }
+
+  .process__item--three::before {
+    content: "3";
+  }
+
+  .process__item--four::before {
+    content: "4";
   }
 }
 
@@ -79,20 +124,69 @@
   @media (min-width: @tablet-width) {
     font-size: 60px;
     line-height: 60px;
-    margin-bottom: 183px;
   }
 }
 
 .process__description {
   font-family: "Arial", sans-serif;
+  position: relative;
   color: @dark-grey;
   margin: 0;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -78px;
+    width: 60px;
+    height: 60px;
+    background-color: @basic-green;
+
+    @media (min-width: @tablet-width) {
+      top: -106px;
+      left: 3px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 11px;
+    left: -64px;
+    width: 30px;
+    height: 32px;
+
+    @media (min-width: @tablet-width) {
+      top: -80px;
+      left: 26px;
+    }
+  }
+
   @media (min-width: @tablet-width) {
     font-size: 16px;
     line-height: 24px;
   }
+}
+
+.process__description--leaf::after {
+  background-image: url("../../img/icon-leaf.svg");
+}
+
+.process__description--powder::after {
+  background-image: url("../../img/icon-powder.svg");
+}
+
+.process__description--eat::after {
+  background-image: url("../../img/icon-eat.svg");
+  background-repeat: no-repeat;
+}
+
+.process__description--time::after {
+  background-image: url("../../img/icon-time.svg");
 }
