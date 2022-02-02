@@ -49,7 +49,6 @@
         <div class="programs__wrapper">
           <p class="programs__image-wrapper">
             <picture>
-              <picture>
               <source media="(min-width: 1440px)" srcset="img/promo-img-desktop.png 1x, img/promo-img-desktop@2x.png 2x">
               <source media="(min-width: 768px)" srcset="img/promo-img-tablet.png 1x, img/promo-img-tablet@2x.png 2x">
               <img class="programs__image" src="img/promo-img-mobile.png" srcset="img/promo-img-mobile@2x.png 2x" width="280" height="270" alt="Промо Кэт Энерджи">
@@ -64,7 +63,7 @@
             <li class="program__item">
               <a class="program__link-cat program__link-cat--slim">
                 <picture>
-                  <source media="(min-width: 1200px)" srcset="img/cat-slim-desktop.svg">
+                  <source media="(min-width: 1440px)" srcset="img/cat-slim-mobile.svg">
                   <source media="(min-width: 768px)" srcset="img/cat-slim-tablet.svg">
                   <img class="program__link__img-slim" src="img/cat-slim-mobile.svg" width="36" height="50" alt="Худой кот»">
                 </picture>
@@ -77,7 +76,7 @@
             <li class="program__item">
               <a class="program__link-cat program__link-cat--pro">
                 <picture>
-                  <source media="(min-width: 1200px)" srcset="img/cat-pro-desktop.svg">
+                  <source media="(min-width: 1440px)" srcset="img/cat-pro-mobile.svg">
                   <source media="(min-width: 768px)" srcset="img/cat-pro-tablet.svg">
                   <img class="program__link__img-pro" src="img/cat-pro-mobile.svg" width="67" height="28" alt="Подтянутый кот»">
                 </picture>
@@ -123,7 +122,7 @@
                     5 кг
                   </b>
                   <p class="example__description">
-                    снижение <br>веса
+                    снижение веса
                   </p>
                 </li>
                 <li class="example__item">
@@ -131,8 +130,7 @@
                     60 дней
                   </b>
                   <p class="example__description">
-                    затрачено <br>
-                    времени
+                    затрачено времени
                   </p>
                 </li>
               </ul>
@@ -142,7 +140,6 @@
           <div class="example__img-toggle">
             <p class="example__image-wrapper">
               <picture>
-                <picture>
                 <source media="(min-width: 768px)" srcset="img/fat-slim-tablet.png 1x, img/fat-slim-tablet@2x.png 2x">
                 <img class="example__image" src="img/fat-cat-mobile.png" srcset="img/fat-cat-mobile@2x.png 2x" width="280" height="232" alt="Промо Кэт Энерджи">
               </picture>
@@ -158,7 +155,7 @@
       </section>
     </main>
     <footer class="page-footer">
-      <div class="page-footer__wrapper">
+      <div class="page-footer__wrapper page-footer__wrapper--index">
         <div class="page-footer__contacts contacts">
           <b class="contacts__title">Приглашаем к сотрудничеству дилеров!</b>
           <address class="contacts__text">
@@ -180,7 +177,7 @@
             <ul class="social__list">
               <li class="social__item">
                 <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
-                  <svg class="social__link-vk">
+                  <svg class="social__img social__img--vk">
                     <use href="img/sprite.svg#icon-vk"></use>
                   </svg>
                   <span class="visually-hidden">
@@ -190,7 +187,7 @@
               </li>
               <li class="social__item">
                 <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy">
-                  <svg class="social__link-inst">
+                  <svg class="social__img social__img--inst">
                     <use href="img/sprite.svg#icon-inst"></use>
                   </svg>
                   <span class="visually-hidden">
@@ -200,21 +197,30 @@
               </li>
               <li class="social__item">
                 <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
-                  <!--<span class="visually-hidden">-->
+                  <svg class="social__img social__img--fb">
+                    <use href="img/sprite.svg#icon-fb"></use>
+                  </svg>
+                  <span class="visually-hidden">
                     Мы в Фейсбуке
-                  <!--</span>-->
+                  </span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="page-footer__copyright copyright">
-            <b class="copyright__text">HTML Academy</b>
-            <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
+          <div class="page-footer__copyright">
+            <b class="page-footer__copyright-text">HTML Academy</b>
+            <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
+              <svg class="social__copyright-html">
+                <use href="img/sprite.svg#icon-html"></use>
+              </svg>
+            <span class="visually-hidden">
+              HTML Academy
+            </span>
+            </a>
           </div>
         </div>
       </div>
     </footer>
-
     <script>
       var navMain = document.querySelector('.nav');
       var navToggle = document.querySelector('.nav__toggle');
@@ -231,6 +237,5 @@
         }
       });
     </script>
-
   </body>
 </html>

@@ -41,6 +41,7 @@
       bottom: 0;
       left: 0;
       height: 2px;
+      z-index: 2;
       background-color: @basic-green;
     }
 
@@ -60,15 +61,15 @@
       background-color: @green;
     }
 
-    .site-list--index &--current::after {
-      background-color: @dark;
-    }
+    /*.site-list--index &--current::after {
+      background-color: @white;
+    }*/
   }
 }
 
-@media (min-width: @desktop-width) {                          /*не переопределить!!!*/
+@media (min-width: @desktop-width) {
   .site-list--index .site-list__item--current::after {
-    background-color: @dark;
+    background-color: @white;
   }
 }
 
@@ -82,11 +83,11 @@
 
 .site-list__item .site-list__page:hover,
 .site-list__item .site-list__page:focus {
-  color: fade(@dark, 60%);
+  opacity: 0.6;
 }
 
 .site-list__item .site-list__page:active {
-  color: fade(@dark, 30%);
+  opacity: 0.3;
 }
 
 @media (max-width: @mobile-width-only) {

@@ -44,8 +44,15 @@
     @media (min-width: @tablet-width) {
       width: 200px;
       height: 200px;
-      left: 420px;
-      top: 87px;
+      left: 445px;
+      top: 93px;
+    }
+
+    @media (min-width: @desktop-width) {
+      width: 100px;
+      height: 100px;
+      left: 52px;
+      top: 46px;
     }
   }
 }
@@ -62,16 +69,18 @@
 
   @media (min-width: @tablet-width) {
     display: block;
-    left: 441px;
-    top: 64px;
+    left: 475px;
+    top: 82px;
     width: 140px;
     height: 194px;
   }
 
   @media (min-width: @desktop-width) {
     padding: 55px 0;
-    width: 202px;
-    z-index: 0;
+    width: 70px;
+    height: 97px;
+    left: 67px;
+    top: -13px;
   }
 }
 
@@ -87,15 +96,18 @@
 
   @media (min-width: @tablet-width) {
     display: block;
-    left: 441px;
-    top: 64px;
+    left: 413px;
+    top: 135px;
     width: 268px;
     height: 112px;
   }
 
   @media (min-width: @desktop-width) {
     padding: 55px 0;
-    width: 202px;
+    width: 134px;
+    height: 56px;
+    left: 33px;
+    top: 11px;
   }
 }
 
@@ -139,7 +151,7 @@
     width: 340px;
     font-size: 16px;
     line-height: 24px;
-    margin: 0 316px 48px 52px;
+    margin: 0 316px 53px 52px;
   }
 
   @media (min-width: @desktop-width) {
@@ -175,16 +187,26 @@
   &::after {
     content: "";
     position: absolute;
-    width: 32px;
+    width: 24px;
     height: 10px;
     top: 2px;
     right: -44px;
     background-color: transparent;
     background-image: url("../../img/arrow-mobil.svg");
 
+    /*&::after:hover {
+      background-image: url("../../img/arrow-big.svg");
+      width: 32px;                     не срабатывает!!!!!!!!!!!!!!!
+    }*/
+
     @media (min-width: @tablet-width) {
-      top: 5px;
-      right: 15px;
+      top: 11px;
+      right: -47px;
+    }
+
+    @media (min-width: @desktop-width) {
+      top: 8px;
+      right: -50px;
     }
   }
 
@@ -198,4 +220,21 @@
   @media (min-width: @desktop-width) {
     margin: 0 410px 59px 52px;
   }
+}
+
+.program__link:hover {
+  &::after {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 10px;
+    top: 8px;
+    right: -39px;
+    background-image: url("../../img/arrow-big.svg");
+  }
+}
+
+
+.program__link:active {
+  opacity: 0.3;
 }

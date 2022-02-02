@@ -18,13 +18,17 @@
     flex-direction: row;
     justify-content: space-between;
     width: 1220px;
-    padding: 0 110px 65px 110px;
+    padding: 0 110px;
     background: linear-gradient(to bottom, @white 200px, @background-gray 200px 1000px);
   }
 }
 
 .example__description-wrapper {
   display: block;
+
+  @media (min-width: @desktop-width) {
+    padding-top: 69px;
+  }
 }
 
 .example__title {
@@ -39,11 +43,11 @@
   @media (min-width: @tablet-width) {
     font-size: 60px;
     line-height: 60px;
-    margin-bottom: 63px;
+    margin-bottom: 66px;
   }
 
   @media (min-width: @desktop-width) {
-    margin-bottom: 146px;
+    margin-bottom: 151px;
   }
 }
 
@@ -99,7 +103,7 @@
 
   @media (min-width: @desktop-width) {
     flex-direction: row;
-    margin-bottom: 55px;
+    margin-bottom: 49px;
   }
 }
 
@@ -118,7 +122,7 @@
   }
 
   @media (min-width: @tablet-width) {
-    padding: 15px 57px 20px 57px;
+    padding: 15px 56px 18px 57px;
 
     &:last-of-type {
       padding: 15px 30px 20px 30px;
@@ -178,8 +182,9 @@
     background-color: @white;
     font-size: 14px;
     line-height: 14px;
-    top: 57px;
-    left: 42px;
+    top: 62px;
+    left: 18px;
+    width: 127px;
   }
 
   @media (min-width: @desktop-width) {
@@ -208,8 +213,8 @@
 
   @media (min-width: @tablet-width) {
     font-size: 20px;
-    line-height: 20px;
-    margin-bottom: 80px;
+    line-height: 27px;
+    margin-top: 7px;
     width: 174px;
     text-align: end;
   }
@@ -227,6 +232,7 @@
 
   @media (min-width: @desktop-width) {
     margin: 0;
+    padding-top: 30px;
   }
 }
 
@@ -240,6 +246,7 @@
   @media (min-width: @tablet-width) {
     width: 592px;
     height: 511px;
+    margin-bottom: 29px;
   }
 }
 
@@ -270,11 +277,15 @@
 
   @media (min-width: @tablet-width) {
     right: 81px;
-    top: 528px;
+    top: 541px;
     height: 6px;
     width: 426px;
     background-color: @special-grey;
     border: none;
+  }
+
+  @media (min-width: @desktop-width) {
+    top: 568px;
   }
 
   &::after {
@@ -291,8 +302,8 @@
     cursor: pointer;
 
     @media (min-width: @tablet-width) {
-      right: 199px;
-      top: -15px;
+      right: 197px;
+      top: -16px;
       height: 34px;
       width: 34px;
       z-index: 1;
@@ -308,8 +319,8 @@
       content: "";
       display: block;
       position: absolute;
-      right: 211px;
-      top: -4px;
+      right: 210px;
+      top: -3px;
       height: 8px;
       width: 8px;
       border-radius: 50%;
@@ -320,7 +331,7 @@
   }
 
   &:hover::after {
-    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.19));
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.19));  /*Как заменить?*/
   }
 
   &:active::after {
@@ -337,7 +348,8 @@
   width: 212px;
 
   @media (min-width: @tablet-width) {
-    width: 592px;
+    width: 582px;
+    padding-bottom: 61px;
   }
 }
 

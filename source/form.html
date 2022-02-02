@@ -90,7 +90,7 @@
                 </li>
               </ul>
             </div>
-            <div class="form__contacts form-contacts"> <!-- чтобы не перепутать с футером -->
+            <div class="form__contacts form-contacts">
               <p class="form-contacts__title">Контактные данные (владельца кота)</p>
               <ul class="form-contacts__wrapper">
                 <li class="form-contacts__item">
@@ -101,17 +101,19 @@
                   <label class="form-contacts__label" for="contacts-phone">Телефон:<sup>*</sup></label>
                   <input class="form-contacts__input" type="tel" id="contacts-phone" name="contacts-phone" placeholder="8 (960) 900-60-90">
                 </li>
-              </li>
+              </ul>
             </div>
             <div class="form__comments comments">
+              <p class="comments__title">Комментарии</p>
               <label class="comments__lable">
-                <p class="comments__title">Комментарии</p>
                 <textarea class="comments__textarea" name="text" placeholder="Расскажите обо всех повадках кота"></textarea>
               </label>
             </div>
-            <ul class="form__additionally additionally">
+
+            <div class="form__additionally additionally">
               <p class="additionally__title">Дополнительно</p>
-              <div class="additionally__wrapper">
+            <ul class="additionally__wrapper">
+
                 <li class="additionally__item">
                   <label class="additionally__label">
                     <input class="visually-hidden additionally__input" type="checkbox" name="additionally" value="Sweetener" checked>
@@ -140,8 +142,9 @@
                     <span class="additionally__name">Витамины</span>
                   </label>
                 </li>
-              </div>
+
             </ul>
+            </div>
             <button class="selection__button" type="submit">Отправить заявку</button>
             <p class="selection__required"><sup>*</sup>— Обязательные поля</p>
           </form>
@@ -171,30 +174,46 @@
             <ul class="social__list">
               <li class="social__item">
                 <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
-                  <!--<span class="visually-hidden">-->
+                  <svg class="social__img social__img--vk">
+                    <use href="img/sprite.svg#icon-vk"></use>
+                  </svg>
+                  <span class="visually-hidden">
                     Мы в Вконтакте
-                  <!--</span>-->
-              </a>
+                  </span>
+                </a>
               </li>
               <li class="social__item">
                 <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy">
-                  <!--<span class="visually-hidden">-->
+                  <svg class="social__img social__img--inst">
+                    <use href="img/sprite.svg#icon-inst"></use>
+                  </svg>
+                  <span class="visually-hidden">
                     Мы в Инстаграме
-                  <!--</span>-->
+                  </span>
                 </a>
               </li>
               <li class="social__item">
                 <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
-                  <!--<span class="visually-hidden">-->
+                  <svg class="social__img social__img--fb">
+                    <use href="img/sprite.svg#icon-fb"></use>
+                  </svg>
+                  <span class="visually-hidden">
                     Мы в Фейсбуке
-                  <!--</span>-->
+                  </span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="page-footer__copyright copyright">
-            <b class="copyright__text">HTML Academy</b>
-            <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
+          <div class="page-footer__copyright">
+            <b class="page-footer__copyright-text">HTML Academy</b>
+            <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
+              <svg class="social__copyright-html">
+                <use href="img/sprite.svg#icon-html"></use>
+              </svg>
+            <span class="visually-hidden">
+              HTML Academy
+            </span>
+            </a>
           </div>
         </div>
       </div>

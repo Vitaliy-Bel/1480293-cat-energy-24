@@ -1,8 +1,10 @@
 .parameter {
   width: 140px;
+  margin-bottom: 16px;
 
   @media (min-width: @tablet-width) {
     width: 250px;
+    margin: 0;
   }
 
   @media (min-width: @desktop-width) {
@@ -16,13 +18,14 @@
   width: 140px;
   border: none;
   justify-content: space-between;
-  margin-bottom: 13px;
+  margin: 0;
 
   @media (min-width: @tablet-width) {
     width: 250px;
+    margin-bottom: 15px;
 
     &:last-of-type {
-      margin-bottom: 33px;
+      margin-bottom: 30px;
     }
 
     &::after {
