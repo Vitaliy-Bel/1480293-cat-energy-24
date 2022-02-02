@@ -37,6 +37,7 @@
 
 .form-contacts__item {
   display: flex;
+  position: relative;
   align-items: center;
   list-style-type: none;
   margin-bottom: 13px;
@@ -64,6 +65,32 @@
     font-size: 20px;
     line-height: 30px;
   }
+}
+
+.form-contacts__img {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 11px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.form-contacts__img--mail {
+  stroke: @dark;
+}
+
+.form-contacts__img--phone {
+  fill: @dark;
+}
+
+.form-contacts__img:focus {
+  fill: @basic-green;
+}
+
+.form-contacts__img:disabled {
+  fill: @error;
 }
 
 .form-contacts__input {

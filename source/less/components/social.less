@@ -37,20 +37,36 @@
 }
 
 
-.social__link {
-  display: block;
-  cursor: pointer;
-  fill: @green;
-  color: @green;
-}
-
 .social__img svg {
   display: block;
-
-  &:hover {
-    fill: @green;   /*Не работает*/
-  }
+  height: 30px;
+  width: 30px;
 }
+
+.social__link--vkontakte,
+.social__link--instagram,
+.social__copyright-html {
+  cursor: pointer;
+  fill: @dark;
+}
+
+.social__link--vkontakte:hover,
+.social__link--instagram:hover,
+.social__copyright-html:hover {
+  display: block;
+  fill: @basic-green;
+}
+
+.social__link--facebook {
+  cursor: pointer;
+  stroke: @dark;
+}
+
+.social__link--facebook:hover {
+  stroke: @basic-green;
+}
+
+
 
 .social__img--vk {
   display: block;
