@@ -5,13 +5,13 @@
 }
 
 @media (max-width: @mobile-width-only) {
-  .page-footer__index {
+  .page-footer--index {
     background: linear-gradient(to bottom, @white 0 112px, @basic-grey 112px 1000px);
   }
 }
 
 @media (min-width: @tablet-width) {
-  .page-footer__index {
+  .page-footer--index {
     background: linear-gradient(to bottom, @white 0 199px, @basic-grey 199px 1500px);
   }
 }
@@ -47,6 +47,7 @@
   content: "";
   top: 113px;
   left: 0;
+  overflow-x: hidden;
   position: absolute;
   display: block;
   border: none;

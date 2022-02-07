@@ -1,18 +1,23 @@
 .process {
   width: 100%;
+  overflow-x: hidden;
   position: relative;
 
   @media (min-width: @tablet-width) {
+    overflow-x: hidden;
+
     &::after {
       content: "";
       position: absolute;
+      width: 100vw;
       bottom: 41px;
-      width: 100%;
       border: 1px solid @grey-line;
     }
   }
 
   @media (min-width: @desktop-width) {
+    overflow-x: inherit;
+
     &::after {
       border: none;
     }
