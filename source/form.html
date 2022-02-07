@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Кэт энерджи</title>
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="icon" href="/img/favicon.ico">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="preload" href="fonts/oswaldmedium.woff2" as="font">
+    <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
   </head>
   <body class="page-body">
     <header class="page-header">
@@ -20,7 +22,7 @@
         <nav class="nav nav--opened nav--nojs">
           <button class="nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
           <div class="nav__wrapper">
-            <ul class="nav__list site-list">
+            <ul class="nav__site site-list">
               <li class="site-list__item">
                 <a class="site-list__page" href="index.html">
                   Главная
@@ -42,7 +44,7 @@
       </div>
     </header>
     <main class="page-main">
-      <section class="selection">
+      <section class="page-main__selection selection">
         <div class="selection__wrapper">
           <h1 class="selection__title">
             Подбор программы
@@ -90,19 +92,19 @@
                 </li>
               </ul>
             </div>
-            <div class="form__contacts form-contacts">
+            <div class="form__form-contacts form-contacts">
               <p class="form-contacts__title">Контактные данные (владельца кота)</p>
               <ul class="form-contacts__wrapper">
                 <li class="form-contacts__item">
                   <label class="form-contacts__label" for="contacts-mail">E-mail:<sup>*</sup></label>
-                  <svg class="form-contacts__img form-contacts__img--mail">
+                  <svg class="form-contacts__img form-contacts__img--mail" width="20" height="14">
                     <use href="img/sprite.svg#mail"></use>
                   </svg>
                   <input class="form-contacts__input" type="email" id="contacts-mail" name="contacts-mail" placeholder="кuklachev@gmail.com">
                 </li>
                 <li class="form-contacts__item">
                   <label class="form-contacts__label" for="contacts-phone">Телефон:<sup>*</sup></label>
-                  <svg class="form-contacts__img form-contacts__img--phone">
+                  <svg class="form-contacts__img form-contacts__img--phone" width="20" height="20">
                     <use href="img/sprite.svg#phone"></use>
                   </svg>
                   <input class="form-contacts__input" type="tel" id="contacts-phone" name="contacts-phone" placeholder="8 (960) 900-60-90">
@@ -115,11 +117,9 @@
                 <textarea class="comments__textarea" name="text" placeholder="Расскажите обо всех повадках кота"></textarea>
               </label>
             </div>
-
             <div class="form__additionally additionally">
-              <p class="additionally__title">Дополнительно</p>
+            <p class="additionally__title">Дополнительно</p>
             <ul class="additionally__wrapper">
-
                 <li class="additionally__item">
                   <label class="additionally__label">
                     <input class="visually-hidden additionally__input" type="checkbox" name="additionally" value="Sweetener" checked>
@@ -148,7 +148,6 @@
                     <span class="additionally__name">Витамины</span>
                   </label>
                 </li>
-
             </ul>
             </div>
             <button class="selection__button" type="submit">Отправить заявку</button>
@@ -158,21 +157,18 @@
       </section>
     </main>
     <footer class="page-footer">
-      <div class="page-footer__wrapper page-footer__wrapper--index">
+      <div class="page-footer__wrapper">
         <div class="page-footer__contacts contacts">
           <b class="contacts__title">Приглашаем к сотрудничеству дилеров!</b>
           <address class="contacts__text">
-            ул. Большая Конюшенная, д. 19/8 Санкт-Петербург
+            ул. Большая Конюшенная, д. 19/8
+              <p class="contacts__text-city">
+                Санкт-Петербург
+              </p>
           </address>
         </div>
-        <iframe class="page-footer__map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1996.7929883483553!2d30.3172265!3d59.9687573!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5afc31%3A0x5f2ac55f567b2400!2sHTML%20Academy!5e0!3m2!1sru!2sru!4v1643241575685!5m2!1sru!2sru"
-          style="border: 0;"
-          allowfullscreen=""
-          loading="lazy"
-          title="Офис компании по адресу набережная реки Карповки, 5, литера П, Санкт-Петербург">
-        </iframe>
-        <div class="page-footer__wrapper--bottom">
-          <a class="page-footer__logo">
+        <div class="page-footer__bottom">
+          <a class="page-footer__logo" href="index.html">
             <img class="page-footer__img" src="img/footer-logo.svg" width="128" height="24" alt="Логотип «Кэт Энерджи»">
           </a>
           <div class="page-footer__social social">
@@ -180,7 +176,7 @@
             <ul class="social__list">
               <li class="social__item">
                 <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
-                  <svg class="social__img social__img--vk">
+                  <svg class="social__img social__img--vk" width="22" height="12">
                     <use href="img/sprite.svg#icon-vkontakte"></use>
                   </svg>
                   <span class="visually-hidden">
@@ -190,7 +186,7 @@
               </li>
               <li class="social__item">
                 <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy">
-                  <svg class="social__img social__img--inst">
+                  <svg class="social__img social__img--inst" width="16" height="16">
                     <use href="img/sprite.svg#icon-instagram"></use>
                   </svg>
                   <span class="visually-hidden">
@@ -200,7 +196,7 @@
               </li>
               <li class="social__item">
                 <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
-                  <svg class="social__img social__img--fb">
+                  <svg class="social__img social__img--fb" width="10" height="18">
                     <use href="img/sprite.svg#icon-facebook"></use>
                   </svg>
                   <span class="visually-hidden">
@@ -213,7 +209,7 @@
           <div class="page-footer__copyright">
             <b class="page-footer__copyright-text">HTML Academy</b>
             <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
-              <svg class="social__copyright-html">
+              <svg class="page-footer__copyright-html" width="27" height="34">
                 <use href="img/sprite.svg#logo-html"></use>
               </svg>
             <span class="visually-hidden">
@@ -223,6 +219,12 @@
           </div>
         </div>
       </div>
+      <iframe class="page-footer__map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1996.7929883483553!2d30.3172265!3d59.9687573!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5afc31%3A0x5f2ac55f567b2400!2sHTML%20Academy!5e0!3m2!1sru!2sru!4v1643241575685!5m2!1sru!2sru"
+      style="border: 0;"
+      allowfullscreen=""
+      loading="lazy"
+      title="Офис компании по адресу набережная реки Карповки, 5, литера П, Санкт-Петербург">
+    </iframe>
     </footer>
     <script src="js/script.js"></script>
   </body>

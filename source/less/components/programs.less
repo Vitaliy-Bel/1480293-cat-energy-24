@@ -1,3 +1,32 @@
+.programs {
+  display: block;
+  position: relative;
+  width: 100%;
+
+  @media (max-width: @mobile-width-only) {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 302px;
+      width: 100%;
+      z-index: 1;
+      background: linear-gradient(rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), url("../../img/index-background-mobil.png") no-repeat;
+      background-color: #504f54;
+      background-position: center;
+
+      @media (min-resolution: 2dppx) {
+        background: linear-gradient(rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), url("../../img/index-background-mobil@2x.png") no-repeat;
+        background-position: center;
+        background-color: #504f54;
+        background-size: auto 302px;
+      }
+    }
+  }
+}
+
+
 .programs__wrapper {
   display: flex;
   position: relative;
@@ -92,7 +121,7 @@
   }
 }
 
-@media (max-width: @mobile-width-only) {
+/*@media (max-width: @mobile-width-only) {
   .programs__wrapper::before {
     content: "";
     position: absolute;
@@ -119,7 +148,7 @@
       background-size: cover;
     }
   }
-}
+}*/
 
 .programs__description {
   font-family: "Oswald", sans-serif;

@@ -1,6 +1,24 @@
 .additional-products {
+  width: 100%;
+  position: relative;
+}
+
+.additional-products__wrap {
   display: flex;
   flex-wrap: wrap;
+  width: 280px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: @tablet-width) {
+    width: 708px;
+    padding: 0 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1220px;
+    padding: 0 110px;
+  }
 }
 
 .additional-products__title {
@@ -15,38 +33,43 @@
   font-weight: 400;
   margin-bottom: 49px;
 
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: calc(100% + 20px);
+    width: calc(100vw - 100% - 40px);
+    height: 2px;
+    background-color: @basic-green;
+  }
+
   @media (min-width: @tablet-width) {
     font-size: 36px;
     line-height: 36px;
     margin-left: 37px;
     margin-bottom: 106px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 21px;
+      right: calc(100% + 36px);
+      width: 100vw;
+      height: 2px;
+      background-color: #68b738;
+    }
+
+    &::after {
+      top: 21px;
+      left: calc(100% + 36px);
+      width: calc(100vw - 100% - 66px);
+    }
   }
 
   @media (min-width: @desktop-width) {
     display: flex;
     margin: 0;
     margin-bottom: 80px;
-  }
-}
-
-.additional-products__title::after {
-  content: "";
-  position: absolute;
-  bottom: -36px;
-  left: 0;
-  width: 280px;
-  border: 1px solid @special-grey;
-
-  @media (min-width: @tablet-width) {
-    left: -37px;
-    bottom: -81px;
-    width: 708px;
-  }
-
-  @media (min-width: @desktop-width) {
-    left: 0;
-    bottom: -80px;
-    width: 895px;
   }
 }
 
@@ -124,10 +147,29 @@
   }
 }
 
+.additional-products__item:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 280px;
+  border: 1px solid @special-grey;
+
+  @media (min-width: @tablet-width) {
+    left: -37px;
+    width: 708px;
+  }
+
+  @media (min-width: @desktop-width) {
+    left: 0;
+    width: 895px;
+  }
+}
+
 .additional-products__text {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
-  color: @dark-dark-grey;
+  color: @dark-grey;
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
@@ -264,6 +306,7 @@
 
     @media (min-width: @desktop-width) {
       width: 245px;
+      height: 288px;
       background-size: auto;
       background-image: url("../../img/cat-prize-mobile.png");
 

@@ -1,3 +1,19 @@
+.products__wrap {
+  width: 280px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: @tablet-width) {
+    width: 708px;
+    padding: 0 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1220px;
+    padding: 0 110px;
+  }
+}
+
 .products__caption {
   font-family: "Oswald", sans-serif;
   position: relative;
@@ -242,8 +258,8 @@
     display: block;
     content: "";
     position: absolute;
-    top: 30px;
-    left: 120px;
+    top: 46px;
+    left: 126px;
     width: 30px;
     height: 2px;
     background-color: @plus;

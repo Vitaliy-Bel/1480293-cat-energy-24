@@ -1,5 +1,6 @@
 .social__list {
   position: relative;
+  flex-wrap: wrap;
   display: flex;
   width: 130px;
   margin: 0;
@@ -44,29 +45,39 @@
 }
 
 .social__link--vkontakte,
-.social__link--instagram,
-.social__copyright-html {
+.social__link--instagram {
   cursor: pointer;
   fill: @dark;
 }
 
 .social__link--vkontakte:hover,
-.social__link--instagram:hover,
-.social__copyright-html:hover {
+.social__link--instagram:hover {
   display: block;
   fill: @basic-green;
 }
 
-.social__link--facebook {
+.social__link--vkontakte:active,
+.social__link--instagram:active {
+  fill: @basic-green;
+  opacity: 0.25;
+}
+
+.social__link--facebook,
+.social__copyright-html {
   cursor: pointer;
   stroke: @dark;
 }
 
-.social__link--facebook:hover {
+.social__link--facebook:hover,
+.social__copyright-html:hover {
   stroke: @basic-green;
 }
 
-
+.social__link--facebook:active,
+.social__copyright-html:active {
+  stroke: @basic-green;
+  opacity: 0.25;
+}
 
 .social__img--vk {
   display: block;

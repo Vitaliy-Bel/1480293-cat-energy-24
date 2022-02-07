@@ -1,17 +1,30 @@
 .programs-type {
   margin: 0;
+  position: relative;
   padding: 0;
+
+  @media (max-width: @mobile-width-only) {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: -20px;
+      width: 320px;
+      border: 1px solid @special-grey;
+    }
+  }
 
   @media (min-width: @tablet-width) {
     border: 1px solid @special-grey-white;
     box-sizing: border-box;
-    padding: 25px 0;
-    margin-bottom: 71px;
+    padding: 26px 0;
+    margin-bottom: 49px;
   }
 
   @media (min-width: @desktop-width) {
     width: 568px;
-    margin-bottom: 69px;
+    margin-bottom: 38px;
+    padding: 31px 0;
   }
 }
 
@@ -21,7 +34,7 @@
 
   @media (min-width: @tablet-width) {
 
-    margin-bottom: 13px;
+    margin-bottom: 24px;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -31,6 +44,11 @@
 
 .programs-type__label {
   position: relative;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.25;
+  }
 }
 
 .programs-type__square {
@@ -44,8 +62,20 @@
   border: 1px solid @special-grey;
   cursor: pointer;
 
+  &:hover {
+    border: 1px solid @input-hover;
+  }
+
   @media (min-width: @tablet-width) {
-    left: 39px;
+    left: 29px;
+    top: -10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (min-width: @desktop-width) {
+    left: 24px;
+    top: -11px;
   }
 }
 
@@ -58,16 +88,14 @@
   height: 13.5px;
   border-radius: 50%;
   background-color: @basic-green;
+
+  @media (min-width: @tablet-width) {
+    left: 11px;
+    top: 12px;
+    width: 18px;
+    height: 18px;
+  }
 }
-
-/*.programs-type__input[type="radio"]:hover + .programs-type__square,
-.programs-type__input[type="radio"]:focus + .programs-type__square {
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.19));   /*переводить цвет в дарк или еще что-то?
-}*/
-
-/*.programs-type__input[type="radio"]:active + .programs-type__square {
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.2));   /* pressed?
-}*/
 
 .programs-type__name {
   font-family: "Oswald", sans-serif;
@@ -83,4 +111,12 @@
     line-height: 30px;
     margin-left: 88px;
   }
+}
+
+.programs-type__input[type="radio"]:disabled + .programs-type__square {
+  opacity: 0.3;
+}
+
+.programs-type__input[type="radio"]:disabled + .programs-type__name {
+  opacity: 0.3;
 }

@@ -1,12 +1,12 @@
 .contacts {
-  padding: 24px 0;
+  padding: 27px 0;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 366px;
+  margin-bottom: 368px;
 
   @media (min-width: @tablet-width) {
     padding: 57px 40px;
-    margin-bottom: 364px;
+    margin-bottom: 423px;
   }
 
   @media (min-width: @desktop-width) {
@@ -54,5 +54,34 @@
 
   @media (min-width: @desktop-width) {
     text-align: start;
+  }
+}
+
+.contacts__text-city {
+  content: "";
+  position: absolute;
+  font-family: "Arial", sans-serif;
+  color: @dark-grey;
+  width: 139px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  top: 63px;
+  right: 21px;
+  margin: 0;
+  font-style: normal;
+
+  @media (min-width: @tablet-width) {
+    top: 118px;
+    right: 71px;
+    font-size: 16px;
+    line-height: 20px;
+    width: 155px;
+  }
+
+  @media (min-width: @desktop-width) {
+    text-align: start;
+    top: 212px;
+    right: 845px;
   }
 }

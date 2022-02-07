@@ -1,3 +1,15 @@
+.example {
+  width: 100%;
+  background-color: @background-gray;
+
+  @media (min-width: @tablet-width) {
+    background: linear-gradient(to bottom, @white 0 576px, @background-gray 576px 1000px);
+  }
+
+  @media (min-width: @desktop-width) {
+    background: linear-gradient(to bottom, @white 0 206px, @background-gray 206px 1000px);
+  }
+}
 
 .example__wrapper {
   background-color: @background-gray;
@@ -19,15 +31,20 @@
     justify-content: space-between;
     width: 1220px;
     padding: 0 110px;
-    background: linear-gradient(to bottom, @white 200px, @background-gray 200px 1000px);
+    background: transparent;
   }
 }
 
 .example__description-wrapper {
   display: block;
 
+  @media (min-width: @tablet-width) {
+    background-color: @white;
+  }
+
   @media (min-width: @desktop-width) {
     padding-top: 69px;
+    background: transparent;
   }
 }
 
@@ -262,7 +279,7 @@
 }
 
 
-.example-slider {
+.example__slider {
   content: "";
   display: block;
   position: absolute;
@@ -331,24 +348,26 @@
   }
 
   &:hover::after {
-    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.19));  /*Как заменить?*/
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.19));
   }
 
   &:active::after {
-    filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.2));
+    border: 1px solid @basic-green;
+    box-sizing: border-box;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
   }
 }
 
 
-.example-toggle-wrapper {
+.example__toggle-wrapper {
   display: flex;
   position: relative;
   margin: 0 auto;
   justify-content: space-between;
-  width: 212px;
+  width: 202px;
 
   @media (min-width: @tablet-width) {
-    width: 582px;
+    width: 572px;
     padding-bottom: 61px;
   }
 }
@@ -362,21 +381,21 @@
   line-height: 20px;
   font-weight: 400;
   border: none;
+  padding: 0;
   background-color: @background-gray;
   cursor: pointer;
+
+  &:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+  }
+
+  &:active {
+    border-bottom: none;
+  }
 
   @media (min-width: @tablet-width) {
     font-size: 20px;
     line-height: 30px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 32px;
-      left: 8px;
-      width: 47px;
-      opacity: 0.4;
-      border: 1px solid @dark;
-    }
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.24);
   }
 }

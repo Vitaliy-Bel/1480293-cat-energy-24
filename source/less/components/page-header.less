@@ -1,3 +1,22 @@
+.page-header {
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: @desktop-width) {
+  .page-header__index::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    min-height: 694px;
+    background: linear-gradient(rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), url("../../img/index-background-desktop.png") no-repeat;
+    background-color: #504f54;
+    z-index: 1;
+  }
+}
+
 .page-header__wrapper {
   display: flex;
   position: relative;
@@ -21,19 +40,7 @@
   }
 }
 
-@media (min-width: @desktop-width) {
-  .page-header__wrapper--index::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
-    height: 694px;
-    width: 720px;
-    background-repeat: no-repeat;
-    background-color: rgba(104, 183, 56, 0.85);
-  }
-
+/*
   .page-header__wrapper--index::after {
     content: "";
     position: absolute;
@@ -51,7 +58,7 @@
       background-size: cover;
     }
   }
-}
+}*/
 
 .page-header__logo {
   position: relative;

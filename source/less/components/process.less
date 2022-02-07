@@ -1,5 +1,27 @@
+.process {
+  width: 100%;
+  position: relative;
+
+  @media (min-width: @tablet-width) {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 41px;
+      width: 100%;
+      border: 1px solid @grey-line;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &::after {
+      border: none;
+    }
+  }
+}
+
 .process__wrapper {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 280px;
   margin: 0 auto;
@@ -31,29 +53,14 @@
     grid-template-rows: 1fr 1fr;
     gap: 53px 139px;
     margin-right: 80px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -53px;
-      left: -30px;
-      width: 768px;
-      border: 1px solid @grey-line;
-    }
-
-    @media (min-width: @desktop-width) {
-      &::after {
-        border: none;
-      }
-    }
   }
 
   @media (min-width: @desktop-width) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 77px;
-    margin: 0;
-    border: none;   /*Как отключить?*/
+    margin-right: 0;
+    border: none;
   }
 }
 
@@ -64,7 +71,7 @@
   margin-left: 80px;
   z-index: 1;
 
-  &:last-of-type {    /*как это отменить на таблете?*/
+  &:last-of-type {
     margin-bottom: 0;
   }
 
